@@ -41,6 +41,19 @@ a {
     background-color: black;
 }
 
+.content {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 64%;
+    float: right;
+}
+
+.sidebar {
+    display: inline-block;
+}
+
 .navbarBtn {
     border-bottom: 5px solid black;
     background-color: black;
@@ -80,14 +93,6 @@ a {
     float: right; 
 }
 */
-
-.sidebar, .content {
-    display: inline-block;
-}
-
-.content {
-    text-align: center;
-}
 
 .dot {
     cursor: pointer;
