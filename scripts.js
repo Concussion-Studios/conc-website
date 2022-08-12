@@ -1,4 +1,5 @@
 var imgSlideEl = document.getElementsByClassName("imgSlide");
+var videoEls = document.getElementsByTagName("video");
 
 // Image slider setup
 for (var i = 0; i < imgSlideEl.length; i++) {
@@ -16,9 +17,9 @@ for (var i = 0; i < imgSlideEl.length; i++) {
 function getSiSC(children, opposite = false) { // This function helps us to get only the img elements under .imgSlide in order for us to implement the dots inside of the class itself
     var newC = [];
     for (var i = 0; i < children.length; i++) {
-        if (children[i].tagName != "IMG" && !opposite)
+        if (children[i].tagName != "IMG" && children[i].tagName != "VIDEO" && !opposite)
             continue;
-        if (children[i].tagName == "IMG" && opposite)
+        if (children[i].tagName == "IMG" && children[i].tagName != "VIDEO" && opposite)
             continue;
         newC.push(children[i]);
     }
