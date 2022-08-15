@@ -1,5 +1,6 @@
 var imgSlideEl = document.getElementsByClassName("imgSlide");
 var videoEls = document.getElementsByTagName("video");
+var contentFrameEl = document.getElementById("contentFrame");
 
 // Image slider setup
 for (var i = 0; i < imgSlideEl.length; i++) {
@@ -19,7 +20,7 @@ function getSiSC(children, opposite = false) { // This function helps us to get 
     for (var i = 0; i < children.length; i++) {
         if (children[i].tagName != "IMG" && children[i].tagName != "VIDEO" && !opposite)
             continue;
-        if (children[i].tagName == "IMG" && children[i].tagName != "VIDEO" && opposite)
+        if (children[i].tagName == "IMG" && children[i].tagName == "VIDEO" && opposite)
             continue;
         newC.push(children[i]);
     }
@@ -97,4 +98,8 @@ function autoCycleImgs(cchildren, time) {
     cycleImg(children, 1);
 
     setTimeout(()=> { autoCycleImgs(children, time) }, time);
+}
+
+function displayFrame(page) {
+    contentFrameEl.setAttribute("src", ("frames/" + page + ".htm"));
 }

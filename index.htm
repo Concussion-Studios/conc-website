@@ -11,11 +11,11 @@
     </head>
     <body>
         <div id="navbar">
-            <a id="conc" class="navbarBtn selected"><img src="img/logos/Logo.png" \></a>
-            <a id="dmcr" href="#dmcrbox" class="navbarBtn"><img src="img/logos/hq.png" \></a>
-            <a id="lf" href="#lfbox" class="navbarBtn"><img src="img/logos/lfebeta2.png" \></a>
-            <a id="cf" href="#cfbox" class="navbarBtn"><img src="img/logos/cflogo.png" \></a>
-            <a id="tep" href="#tepbox" class="navbarBtn"><img src="img/logos/TEP_discord_logo.png" \></a>
+            <a id="conc" class="navbarBtn selected" onclick="displayFrame('conc')"><img src="img/logos/Logo.png" \></a>
+            <a id="dmcr" href="#dmcrbox" class="navbarBtn" onclick="displayFrame('dmcr')"><img src="img/logos/hq.png" \></a>
+            <a id="lf" href="#lfbox" class="navbarBtn" onclick="displayFrame('lf')"><img src="img/logos/lfebeta2.png" \></a>
+            <a id="cf" href="#cfbox" class="navbarBtn" onclick="displayFrame('cf')"><img src="img/logos/cflogo.png" \></a>
+            <a id="tep" href="#tepbox" class="navbarBtn" onclick="displayFrame('tep')"><img src="img/logos/TEP_discord_logo.png" \></a>
 
 
             <!-- reassimilate asap
@@ -34,25 +34,12 @@
             <a href="#">Public Discord Server</a>
         </div>
         <div class="content">
-            <div class="imgSlide" oncontextmenu="return false;">
-                <img src="img/shots/dmcr/cooldcdm5.png" \>
-                <img src="img/shots/dmcr/E5DM.png" \>
-                <img src="img/shots/dmcr/warmdcdm5.png" \>    
-                <video controls loop>
-                    <source src="video/videoplayback.mp4" type="video/mp4">
-                    Your browser does not support video playback
-                </video>
-                <!-- <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div> -->
-            </div>
+            <iframe src="frames/conc.htm" id="contentFrame"></iframe>
         </div>
 
         </div>
         <div id="footer">
-            <p>Do the Mario!</p>
+            <p>Swing your arms from side to side. Come on its time to go, Do the Mario!</p>
         </div>
         <script src="scripts.js"></script>
     </body>
