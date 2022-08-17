@@ -2,3 +2,11 @@ body {
     margin: 0.5em;
     padding: 0.5em;
 }
+
+.imgSlide {
+    text-align: center;
+}
+
+.dots {
+    width: 100%;
+}

@@ -108,7 +108,7 @@ function cycleImg(cchildren, amount) {
 
     // Clamping
     if (amount < 0) {
-        amount = 3 + amount;
+        amount += 3;
     }
     index = (index + amount) % children.length;
     console.log("Image Slider Index(After Clamping): " + index);
@@ -140,4 +140,28 @@ function continueCycling(currentElement, children) {
 
 function displayFrame(page) {
     contentFrameEl.setAttribute("src", ("frames/" + page + ".htm"));
+    // Sidebar Activation
+    var tabData = verboseDict["frames/" + page + ".htm"];
+    document.getElementById("sidebartitle").innerHTML = tabData[0];
+    for (var i = 1; i < tabData.length; i++) { // We start with index 1 because we already did the title thing.
+        if (tabData[i] == "nH") {
+            hyperlinks[i - 1].style.display = "none";
+            continue;
+        }
+        hyperlinks[i - 1].href = tabData[i];
+        hyperlinks[i - 1].style.display = "";
+    }
 }
+
+
+// Sidebar Functions
+
+var verboseDict = {
+    "frames/conc.htm": ["Concussion Studios", "nH", "https://www.moddb.com/company/concussion-studios", "nH", "https://twitter.com/concstudios"],
+    "frames/dmcr.htm": ["Deathmatch Classic: Refragged", "https://steamcommunity.com/groups/DMCRefragged", "https://www.moddb.com/mods/deathmatch-classic-refragged", "https://discord.gg/n2xpW9x", "nH"],
+    "frames/lf.htm": ["Lambda Fortress", "https://steamcommunity.com/groups/lambdafortress", "nH", "https://discord.gg/2z4eTG9", "nH"],
+    "frames/cf.htm": ["Classic Fortress 2", "nH", "nH", "https://discord.gg/UsuD4gH", "nH"],
+    "frames/tep.htm": ["The Espionage Project", "nH", "nH", "https://discord.gg/qbGpMyY27W", "nH"]
+};
+
+var hyperlinks = document.getElementById("sidebarlinks").children;

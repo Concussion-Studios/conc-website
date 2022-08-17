@@ -2,9 +2,9 @@
     --bgcolor: white;
 
     --dmcrcolor: rgb(150, 50, 50);
-    --lfcolor: rgb(200, 150, 50); 
-    --cfcolor: rgb(200, 105, 50);
-    --tepcolor: rgb(50, 50, 150);
+    --lfcolor: rgb(255, 255, 100); 
+    --cfcolor: rgb(150, 100, 55);
+    --tepcolor: rgb(70, 110, 170);
 }
 
 body, html {
