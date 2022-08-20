@@ -1,6 +1,5 @@
 var imgSlideEl = document.getElementsByClassName("imgSlide");
 var videoEls = document.getElementsByTagName("video");
-var contentFrameEl = document.getElementById("contentFrame");
 
 var imgSlideAllowedToCycle = true;
 
@@ -12,7 +11,9 @@ for (var i = 0; i < imgSlideEl.length; i++) {
 
     /* TODO: Implement dots better. They are currently only indicators of which image it is on. */
 
+    createButtons(imgSlideEl[i], i);
     createDots(imgSlideChildren, imgSlideEl[0]); // why in the name of god does this for loop return 3 when the imgSlideEl.lenght is 1
+
     displayEl(imgSlideChildren, 0); // Display the first image
 
     setTimeout(()=> { autoCycleImgs(imgSlideChildren, 5000) }, 5000);
@@ -69,11 +70,11 @@ function onDotClick(event, parentDiv, imgDiv) {
     setTimeout(()=> { continueCycling(imgDivChildren[getActiveEl(imgDivChildren)], imgDivChildren) }, 30000);
 }
 
-function createDots(children, parentDiv) {
+function createDots(cchildren, parentDiv) {
     // Creates the 'dots' div
     var dotsDiv = document.createElement("div");
     dotsDiv.classList = "dots";
-
+    var children = getSiSC(cchildren);
     for (var i = 0; i < children.length; i++) { // Dynamically creates dots based on how many images there are
         window["dot_" + i] = document.createElement("span");
 
@@ -91,12 +92,46 @@ function createDots(children, parentDiv) {
     parentDiv.appendChild(dotsDiv);
 }
 
+function createButtons(parentDiv, number) {
+    // Creates slideshow navigation buttons
+    var ButtonContainer = document.createElement("div");
+    ButtonContainer.id = "btncontainer";
+    var ButtonLeft = document.createElement("a");
+    var ButtonRight = document.createElement("a");
+    ButtonLeft.innerHTML = "&#x276E;";
+    ButtonRight.innerHTML = "&#x276F;";
+    ButtonLeft.classList = "carouselbtn left";
+    ButtonRight.classList = "carouselbtn right";
+    ButtonLeft.addEventListener("click", ()=>{cycleImgGlobal(-1, number)});
+    ButtonRight.addEventListener("click", ()=>{cycleImgGlobal(1, number)});
+    ButtonContainer.appendChild(ButtonLeft);
+    ButtonContainer.appendChild(ButtonRight);
+    parentDiv.appendChild(ButtonContainer);
+}
+
 function setActiveDot(children, index) {
     for (var i = 0; i < children.length; i++) {
         window["dot_" + i].classList = "dot";
     }
 
     window["dot_" + index].classList = "dot active";
+}
+
+function cycleImgGlobal(amount, number) {
+    var imgSlideChildren = imgSlideEl[number].children;
+    children = getSiSC(imgSlideChildren);
+    index = getActiveEl(children);
+    
+    // Clamping
+    if ((index + amount) < 0) {
+        index = children.length;
+    }
+    index = (index + amount) % children.length;
+    console.log("Image Slider Index(After Clamping): " + index);
+    imgSlideAllowedToCycle = false;
+    setTimeout(()=> { continueCycling(imgDivChildren[getActiveEl(imgDivChildren)], imgDivChildren) }, 30000);
+    setActiveDot(children, index);
+    displayEl(children, index);  
 }
 
 function cycleImg(cchildren, amount) {
@@ -114,7 +149,6 @@ function cycleImg(cchildren, amount) {
     console.log("Image Slider Index(After Clamping): " + index);
 
     setActiveDot(children, index);
-
     displayEl(children, index);  
 }
 
@@ -139,6 +173,7 @@ function continueCycling(currentElement, children) {
 }
 
 function displayFrame(page) {
+    var contentFrameEl = document.getElementById("contentFrame");
     contentFrameEl.setAttribute("src", ("frames/" + page + ".htm"));
     // Sidebar Activation
     var tabData = verboseDict["frames/" + page + ".htm"];
