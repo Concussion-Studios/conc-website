@@ -43,6 +43,10 @@ function getActiveEl(children) {
 
 function displayEl(cchildren, index) {
     children = getSiSC(cchildren);
+    if (children[getActiveEl(children)].tagName == "VIDEO") {
+        children[getActiveEl(children)].pause();
+    }
+
     for (i = 0; i < children.length; i++) {
         children[i].style.display = "none";
     }
