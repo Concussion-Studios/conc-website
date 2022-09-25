@@ -5,6 +5,7 @@
     --lfcolor: rgb(255, 255, 100); 
     --cfcolor: rgb(150, 101, 55);
     --tepcolor: rgb(70, 110, 170);
+    --p617color: rgb(50, 102, 50);
 }
 
 body, html {
@@ -89,6 +90,11 @@ a {
 #tep:hover {
     border-bottom-color: var(--tepcolor);
     background-color: var(--tepcolor);
+}
+
+#p617:hover {
+    border-bottom-color: var(--p617color);
+    background-color: var(--p617color);
 }
 
 /* 

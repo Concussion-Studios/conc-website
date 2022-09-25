@@ -198,11 +198,12 @@ function displayFrame(page) {
 // Sidebar Functions
 
 var verboseDict = {
-    "frames/conc.htm": ["Concussion Studios", "nH", "https://www.moddb.com/company/concussion-studios", "nH", "https://twitter.com/concstudios"],
-    "frames/dmcr.htm": ["Deathmatch Classic: Refragged", "https://steamcommunity.com/groups/DMCRefragged", "https://www.moddb.com/mods/deathmatch-classic-refragged", "https://discord.gg/n2xpW9x", "nH"],
-    "frames/lf.htm": ["Lambda Fortress", "https://steamcommunity.com/groups/lambdafortress", "nH", "https://discord.gg/2z4eTG9", "nH"],
-    "frames/cf.htm": ["Classic Fortress 2", "nH", "nH", "https://discord.gg/UsuD4gH", "nH"],
-    "frames/tep.htm": ["The Espionage Project", "nH", "nH", "https://discord.gg/qbGpMyY27W", "nH"]
+    "frames/conc.htm": ["Concussion Studios", "nH", "nH", "nH", "https://twitter.com/concstudios", "https://www.youtube.com/channel/UCAtbqejgCOwAKRWnXMyGX5w"],
+    "frames/dmcr.htm": ["Deathmatch Classic: Refragged", "https://steamcommunity.com/groups/DMCRefragged", "https://www.moddb.com/mods/deathmatch-classic-refragged", "https://discord.gg/n2xpW9x", "nH", "nH"],
+    "frames/lf.htm": ["Lambda Fortress", "https://steamcommunity.com/groups/lambdafortress", "nH", "https://discord.gg/2z4eTG9", "nH", "nH"],
+    "frames/cf.htm": ["Classic Fortress 2", "nH", "nH", "https://discord.gg/UsuD4gH", "nH", "nH"],
+    "frames/tep.htm": ["The Espionage Project", "nH", "nH", "https://discord.gg/qbGpMyY27W", "nH", "nH"],
+    "frames/p617.htm": ["Project 617", "nH", "nH", "nH", "nH", "nH"]
 };
 
 var hyperlinks = document.getElementById("sidebarlinks").children;
