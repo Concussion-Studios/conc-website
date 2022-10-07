@@ -2,12 +2,14 @@
     Code written by: ryker
 */
 
+/* ---- Slideshow code ---- */
+
 var slideshowEls = document.body.getElementsByClassName("slideshow");
 var childrenEls = slideshowEls[0].children;
 var slideshowIndex = 0;
 
 function slideshowThink() {
-    setTimeout( ()=> {slideshowIncr();}, 2000);
+    setTimeout( ()=> {slideshowIncr();}, 2500);
 }
 
 function slideshowIncr() {
@@ -26,3 +28,19 @@ function slideshowIncr() {
 }
 
 slideshowThink();
+
+/* ---- Animated icon code ---- */
+
+var iconEl = document.getElementById("icon");
+
+iconEl.addEventListener("mouseover", iconHover);
+
+function iconHover() {
+    iconEl.src = "img/logos/conchighspin.gif";
+}
+
+iconEl.addEventListener("mouseout", iconOut);
+
+function iconOut() {
+    iconEl.src = "img/logos/Logo.png";
+}
