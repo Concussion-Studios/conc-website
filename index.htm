@@ -1,50 +1,91 @@
 <html>
-    <head>
-        <title>Concussion Studios</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="img/favicon.ico">
-        <meta charset="UTF-8">
-        <meta name="description" content="Hi! We are Concussion Studios, we make games and stuff.">
-        <meta name="keywords" content="Concussion, Studios, Valve, Video, Game, VG, Video Game, Half-Life, Modding, Mods, Mapping, Quake">
-        <meta name="author" content="Concussion Studios">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div id="navbar">
-            <a id="conc" class="navbarBtn selected" onclick="displayFrame('conc')"><img src="img/logos/Logo.png" \></a>
-            <a id="dmcr" href="#dmcrbox" class="navbarBtn" onclick="displayFrame('dmcr')"><img src="img/logos/hq.png" \></a>
-            <a id="lf" href="#lfbox" class="navbarBtn" onclick="displayFrame('lf')"><img src="img/logos/lfebeta2.png" \></a>
-            <a id="cf" href="#cfbox" class="navbarBtn" onclick="displayFrame('cf')"><img src="img/logos/cflogo.png" \></a>
-            <a id="tep" href="#tepbox" class="navbarBtn" onclick="displayFrame('tep')"><img src="img/logos/TEP_discord_logo.png" \></a>
-            <a id="p617" href="#p617box" class="navbarBtn" onclick="displayFrame('p617')"><img src="img/logos/eye.png"></a>
+<head>
+    <!--
+        Code written by ryker
+    -->
 
-            <!-- reassimilate asap
-            <div class="floatRight">
-                <a href="contact.htm">Contact Us</a>
-                <a href="about.htm">About</a>
+    <title>Concussion Studios - Main</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+
+<div id="header">
+    <a href="#"><img src="img/logos/Logo.png" id="icon" /></a>
+    <a href="#about">About</a>
+    <a href="#games">Mods</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div id="main">
+    <div id="hero">
+        <div class="slideshow">
+            <img src="img/shots/dmcr/cooldcdm5.png" />
+            <img src="img/shots/dmcr/warmdcdm5.png" />
+            <img src="img/shots/dmcr/E5DM.png" />
+        </div>
+        <h1>Welcome to Concussion Studios!</h1>
+    </div>
+    <div class="breakHeader">
+        <h2 id="about">About us</h2>
+        <p>
+            We're a group of modders developing/hosting mods like Deathmatch Classic: Refragged, Lambda Fortress, Project 617, The Espionage Project and Classic Fortress 2
+        </p>
+    </div>
+    <div class="breakHeader">
+        <h2 id="games">Our Mods</h2>
+        <p>
+            Click on a mod for more information
+        </p>
+
+        <div id="gamesList">
+            <div class="game dmcr">
+                <img src="img/logos/hq.png">
+                <p><a href="#">Deathmatch Classic: Refragged</a></p>
             </div>
-            -->
-        </div>
+            <div class="game lf">
+                <img src="img/logos/lfebeta2.png">
+                <p><a href="#">Lambda Fortress</a></p>
+            </div>
+            <div class="game cf">
+                <img src="img/logos/cflogo.png">
+                <a href="#"><p>Classic Fortress</p></a>
+            </div>
+            <div class="game tep">
+                <img src="img/logos/TEP_discord_logo.png">
+                <a href="#"><p>The Espionage Project</p></a>
+            </div>
+            <div class="game eye">
+                <img src="img/logos/eye.png">
+                <a href="#"><p>Project 617</p></a>
+            </div>
 
-        <div class="sidebar">
-            <h1 id="sidebartitle">Concussion Studios</h1>
-            <div id="sidebarlinks">
-                <a href="#" style="display: none;">Steam Page</a>
-                <a href="#">ModDB Page</a>
-                <a href="#" style="display: none;">Public Discord Server</a>
-                <a href="#">Twitter</a>
-                <a href="#">Youtube</a>
+        </div>
+    </div>
+
+    <div class="breakHeader">
+        <h2 id="contact">How can you contact us?</h2>
+        <p>
+            You can contact us on our Twitter, Youtube and on our Discord servers we created for our mods above. We would love to hear what you think!
+        </p>
+        <div id="contactList">
+            <div class="game twitter">
+                <img src="img/logos/twitter.png" />
+                <a href="https://twitter.com/ConcStudios"><p>Twitter</p></a>
+            </div>
+            <div class="game youtube">
+                <img src="img/logos/youtube.png" />
+                <a href="https://www.youtube.com/channel/UCAtbqejgCOwAKRWnXMyGX5w"><p>Youtube</p></a>
             </div>
         </div>
-        <div class="content">
-            <iframe src="frames/conc.htm" id="contentFrame"></iframe>
-            <a class="slideshowbtn prev" onclick="cycleImg(1)"></a>
-        </div>
+    </div>
+</div>
 
-        </div>
-        <div id="footer">
-            <p>ORAL CUMSHOT</p>
-        </div>
-        <script src="scripts.js"></script>
-    </body>
+<div id="footer">
+    <p>All ownership of the content present on this webpage go to their respective owners. Webpage created by <b>ryker</b></p>
+</div>
+
+<script src="scripts.js"></script>
+</body>
 </html>
