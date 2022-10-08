@@ -5,7 +5,9 @@
 /* ---- Slideshow code ---- */
 
 var slideshowEls = document.body.getElementsByClassName("slideshow");
-var childrenEls = slideshowEls[0].children;
+if (slideshowEls) {
+    var childrenEls = slideshowEls[0].children;
+}
 var slideshowIndex = 0;
 
 function slideshowThink() {
@@ -13,6 +15,10 @@ function slideshowThink() {
 }
 
 function slideshowIncr() {
+    if (!childrenEls) {
+        return;
+    }
+
     for (i = 0; i < childrenEls.length; i++) {
         childrenEls[i].style.opacity = 0;
     }

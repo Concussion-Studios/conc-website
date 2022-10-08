@@ -8,17 +8,24 @@
     --header-color: #2b2b2b;
     --break-header-color: #212121;
     --background-color: #191919;
+    --header-link-color: rgb(78, 78, 78);
+    --text-color: white;
+    --link-color: lightgray;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #191919;
+    background-color: var(--background-color);
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -32,20 +39,21 @@ h1, h2 {
 
 p {
     font-size: 15pt;
+    font-family: 'Kanit', sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: lightgray;
+    color: var(--link-color);
     font-size: 15pt;
     transition: color 0.5s;
 }
 
 a:hover {
-    color: white;
+    color: var(--text-color);
 }
 
-#icon {
+#icon, #gameIcon { /* gameIcon is the same but not linked to a hover animation */
     width: 65px;
     height: 65px;
     margin-left: 2%;
@@ -73,11 +81,11 @@ a:hover {
     margin-right: 2%;
     font-size: 28pt;
     font-family: 'Josefin Sans', sans-serif;
-    color: rgb(78, 78, 78);
+    color: var(--header-link-color);
 }
 
 #header a:hover {
-    color: white;
+    color: var(--text-color);
 }
 
 #header:hover {
@@ -85,7 +93,7 @@ a:hover {
 }
 
 #header h3 {
-    color: white;
+    color: var(--text-color);
     font-size: 30pt;
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
@@ -108,12 +116,15 @@ a:hover {
     padding-bottom: 0;
     font-size: 56pt;
     background-color: var(--break-header-color);
-    color: white;
+    color: var(--text-color);
+    box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
 }
 
 .breakHeader {
     background-color: var(--break-header-color);
-    color: white;
+    color: var(--text-color);
     padding-top: 1%;
     padding-bottom: 1%;
     margin-top: 20%;
@@ -125,6 +136,7 @@ a:hover {
 .breakHeader h2 {
     margin-bottom: 0;
     margin-top: 2%;
+    text-shadow: -7px 4px 9px rgba(0,0,0,1);
 }
 
 .breakHeader p, .breakHeader a {
@@ -132,6 +144,7 @@ a:hover {
     padding-left: 7%;
     padding-right: 7%;
     font-style: italic;
+    text-shadow: -7px 4px 9px rgba(0,0,0,1);
 }
 
 #gamesList {
@@ -148,6 +161,9 @@ a:hover {
     border-radius: 20px;
     background-color: var(--header-color);
     transition: all 0.5s;
+    box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
 }
 
 .game img {
@@ -161,6 +177,7 @@ a:hover {
 .game a, .game p {
     font-style: normal;
     font-weight: bold;
+    text-shadow: none;
 }
 
 #contactList {
@@ -171,7 +188,7 @@ a:hover {
 
 
 #footer {
-    color: white;
+    color: var(--text-color);
     font-size: 18pt;
     background-color: var(--break-header-color);
     height: 10%;
@@ -215,6 +232,18 @@ a:hover {
     background-color: rgb(134, 0, 0);
 }
 
+.steam:hover {
+    background-color: rgb(0, 42, 104);
+}
+
+.moddb:hover {
+    background-color: rgb(156, 0, 0);
+}
+
+.discord:hover {
+    background-color: rgb(77, 137, 216);
+}
+
 .slideshow {
     position: absolute;
     z-index: -10;
@@ -246,4 +275,137 @@ a:hover {
     display: flex;
     position: absolute;
     right: 5%;
+}
+
+#screenshots {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#screenshots a {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.screenshot {
+    width: 400px;
+    height: 280px;
+    box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+}
+
+.download {
+    width: 320px;
+    height: 128px;
+    border: var(--background-color) 3px solid;
+    border-radius: 20px;
+    background-color: var(--header-color);
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4%;
+    margin-right: 4%;
+    transition: background-color 0.5s;
+    box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+}
+
+.download img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 3%;
+    padding: 0;
+}
+
+.download p {
+    float: right;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20pt;
+    margin: 3%;
+    padding: 0;
+    text-shadow: none;
+}
+
+#downloadList {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.discord {
+    width: 50%;
+    height: 215px;
+    border: var(--background-color) 3px solid;
+    border-radius: 20px;
+    background-color: var(--header-color);
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s; 
+    box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+}
+
+.discord img {
+    width: 215px;
+    height: 215px;
+    margin: 0;
+    padding: 0;
+}
+
+.discord p {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 24pt;
+    padding: 0;
+    margin: 0;
+    text-shadow: none;
+}
+
+#discordList {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+button {
+    cursor: pointer;
+}
+
+#top {
+    border: none;
+    background-color: transparent;
+}
+
+#top img {
+    width: 72px;
+    height: 72px;
+}
+
+#topDiv {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0%;
 }
