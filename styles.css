@@ -37,6 +37,10 @@ h1, h2 {
     font-size: 45pt;
 }
 
+h1, h2, h3, h4, h5 {
+    cursor: default;
+}
+
 p {
     font-size: 15pt;
     font-family: 'Kanit', sans-serif;
@@ -61,7 +65,7 @@ a:hover {
 }
 
 #header {
-    height: 15%;
+    height: 90px;
     width: 100%;
     background-color: var(--header-color);
     margin: 0;
@@ -109,17 +113,26 @@ a:hover {
     border-bottom: var(--break-header-color) solid 3px;
 }
 
-#hero h1 {
+#title {
     margin: 0;
     margin-top: 7.5%;
     padding: 1%;
     padding-bottom: 0;
-    font-size: 56pt;
+    font-size: 500%;
     background-color: var(--break-header-color);
     color: var(--text-color);
     box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
     -webkit-box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: -10px 11px 5px -7px rgba(0,0,0,0.75);
+    transition: all 0.5s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
+}
+
+#title:hover {
+    background-color: var(--header-color);
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
 
 .breakHeader {
@@ -274,7 +287,7 @@ a:hover {
 #nav {
     display: flex;
     position: absolute;
-    right: 5%;
+    right: 4%;
 }
 
 #screenshots {
@@ -346,7 +359,6 @@ a:hover {
 }
 
 .discord {
-    width: 50%;
     height: 215px;
     border: var(--background-color) 3px solid;
     border-radius: 20px;
@@ -358,6 +370,8 @@ a:hover {
     align-items: center;
     margin: 0;
     padding: 0;
+    padding-left: 25px;
+    padding-right: 35px;
     transition: background-color 0.5s; 
     box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
     -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
@@ -404,8 +418,8 @@ button {
     height: 72px;
 }
 
-#topDiv {
+.topDiv {
     display: flex;
     justify-content: center;
-    margin: 3% 0%;
+    margin: 1% 0%;
 }
