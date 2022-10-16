@@ -127,6 +127,8 @@ a:hover {
     transition: all 0.5s;
     transition-timing-function: ease-in-out;
     opacity: 0;
+    border-top: 2px solid var(--header-color);
+    border-right: 2px solid var(--header-color);
 }
 
 #title:hover {
@@ -144,6 +146,10 @@ a:hover {
     margin-bottom: 20%;
     border-top: var(--header-color) solid 1px;
     border-bottom: var(--header-color) solid 1px;
+    transition: all 1.05s;
+    transition-delay: 0.55s;
+    transition-timing-function: ease-in-out;
+    opacity: 0;
 }
 
 .breakHeader h2 {
@@ -177,6 +183,8 @@ a:hover {
     box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
     -webkit-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
     -moz-box-shadow: -10px 11px 17px 3px rgba(0,0,0,0.75);
+    cursor: pointer;
+    color: white;
 }
 
 .game img {
@@ -191,6 +199,8 @@ a:hover {
     font-style: normal;
     font-weight: bold;
     text-shadow: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 #contactList {
